@@ -358,4 +358,57 @@ section#contacto p {
     height: 100%;
     object-fit: cover;
 }
+/* Transición para botones e imágenes */
+a, img {
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    transform: scale(1.1); /* Agranda ligeramente al pasar el ratón */
+    opacity: 0.8; /* Reduce la opacidad */
+}
+
+.menu-item img:hover {
+    transform: scale(1.05); /* Efecto zoom en imágenes del menú */
+}
+/* Estilo para la sección de testimonios */
+#testimonios {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#testimonios h2 {
+    color: #004080;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.testimonios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsivo */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Estilo individual de cada testimonio */
+.testimonio {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.testimonio p {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.testimonio cite {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #004080;
+}
 
