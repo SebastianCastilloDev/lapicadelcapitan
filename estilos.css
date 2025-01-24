@@ -411,4 +411,24 @@ a:hover {
     font-weight: bold;
     color: #004080;
 }
+/* Imagen del exterior del restaurante */
+.exterior-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.exterior-container img {
+    width: 100%; /* Ajusta al ancho del contenedor */
+    max-width: 800px; /* Tamaño máximo para evitar que se haga demasiado grande */
+    height: auto; /* Mantiene la proporción */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+}
+
+.exterior-container p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+}
 
