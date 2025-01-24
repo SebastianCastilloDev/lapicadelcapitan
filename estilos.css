@@ -523,6 +523,341 @@ a:hover {
     background-color: #003366; /* Color más oscuro al pasar el ratón */
     transform: scale(1.05); /* Efecto de agrandamiento */
 }
+@media (max-width: 768px) {
+    .menu-grid,
+    .alojamiento-grid {
+        grid-template-columns: 1fr;
+    }
 
+    iframe {
+        width: 100%;
+        height: auto;
+    }
 }
+/* Sección de distancias */
+#distancias {
+    padding: 40px 20px; /* Espaciado interno */
+    background-color: #f4f4f9; /* Fondo claro */
+    text-align: left; /* Alineación del texto */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin: 20px 0; /* Separación con otras secciones */
+}
+
+/* Título de la sección */
+#distancias h2 {
+    font-size: 1.8rem; /* Tamaño del texto */
+    color: #004080; /* Azul oscuro */
+    margin-bottom: 20px; /* Espaciado debajo del título */
+}
+
+/* Descripción general */
+#distancias p {
+    font-size: 1rem; /* Tamaño del texto */
+    color: #555; /* Gris oscuro */
+    margin-bottom: 15px; /* Espaciado debajo del texto */
+}
+
+/* Lista de distancias */
+.distancias-list {
+    list-style-type: none; /* Sin viñetas */
+    padding: 0; /* Sin espaciado adicional */
+    font-size: 1rem; /* Tamaño del texto */
+    color: #333; /* Gris oscuro */
+    line-height: 1.6; /* Espaciado entre líneas */
+}
+
+/* Elementos individuales de la lista */
+.distancias-list li {
+    margin-bottom: 10px; /* Espaciado entre cada elemento */
+    position: relative; /* Posicionamiento para el ícono */
+    padding-left: 25px; /* Espaciado para el ícono */
+}
+
+/* Ícono de ubicación antes de cada elemento */
+.distancias-list li::before {
+    content: "📍"; /* Ícono de ubicación */
+    position: absolute;
+    left: 0; /* Posición del ícono */
+    color: #ff5722; /* Color naranja del ícono */
+    font-size: 1.2rem; /* Tamaño del ícono */
+}
+
+/* Estilo para resaltar los títulos (Terminal, Mall, etc.) */
+.distancias-list strong {
+    color: #004080; /* Azul oscuro */
+    font-weight: bold;
+}
+@media (max-width: 768px) {
+    #distancias {
+        text-align: center; /* Centrar el texto en pantallas pequeñas */
+    }
+
+    .distancias-list li {
+        padding-left: 20px; /* Reduce el espaciado para el ícono */
+    }
+
+    .distancias-list li::before {
+        font-size: 1rem; /* Reduce el tamaño del ícono */
+    }
+}/* Estilo general para la sección de testimonios */
+#testimonios {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#testimonios h2 {
+    font-size: 1.8rem;
+    color: #004080;
+    margin-bottom: 20px;
+}
+
+.testimonios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsivo */
+    gap: 20px;
+}
+
+/* Estilo individual de cada testimonio */
+.testimonio {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    font-style: italic;
+}
+
+.testimonio p {
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Calificación con estrellas doradas */
+.calificacion {
+    font-size: 1.5rem;
+    color: #FFD700; /* Color dorado */
+    margin-bottom: 10px;
+}
+
+/* Nombre del cliente */
+.testimonio cite {
+    display: block;
+    text-align: right;
+    color: #004080;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+#ir-arriba {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #004080;
+    color: white;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+    text-decoration: none;
+    z-index: 1000;
+    display: none; /* Aparece con JavaScript */
+}
+
+#ir-arriba:hover {
+    background-color: #003366;
+}
+/* Botón de subir */
+#ir-arriba {
+    position: fixed; /* Fijo en la pantalla */
+    bottom: 20px; /* Distancia desde la parte inferior */
+    left: 20px; /* Mueve el botón a la izquierda */
+    background-color: #004080; /* Fondo azul oscuro */
+    color: white; /* Texto blanco */
+    font-size: 1.5rem; /* Tamaño del texto */
+    border-radius: 50%; /* Forma circular */
+    width: 50px; /* Ancho del botón */
+    height: 50px; /* Alto del botón */
+    text-align: center; /* Centra el texto horizontalmente */
+    line-height: 50px; /* Centra el texto verticalmente */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    transition: background-color 0.3s, transform 0.3s; /* Transiciones */
+    text-decoration: none; /* Sin subrayado */
+    z-index: 1000; /* Aparece sobre otros elementos */
+    opacity: 0; /* Invisible por defecto */
+    visibility: hidden; /* Oculto por defecto */
+}
+
+/* Mostrar el botón cuando el usuario haga scroll */
+body:has(#ir-arriba:hover),
+body:has(:target) #ir-arriba {
+    opacity: 1; /* Visible */
+    visibility: visible; /* Hacerlo visible */
+}
+
+/* Efecto al pasar el mouse */
+#ir-arriba:hover {
+    background-color: #003366; /* Cambia el color al pasar el mouse */
+    transform: scale(1.1); /* Agranda el botón al pasar el mouse */
+}
+/* Sección del carrusel */
+#carrousel {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f4f4f9; /* Fondo claro */
+}
+
+#carrousel h2 {
+    font-size: 1.8rem;
+    color: #004080;
+    margin-bottom: 20px;
+}
+
+/* Contenedor del carrusel */
+.carrousel {
+    display: flex;
+    overflow: hidden; /* Oculta las imágenes fuera del área visible */
+    position: relative;
+    max-width: 100%; /* Asegura que el carrusel se ajuste a la pantalla */
+    margin: 0 auto;
+}
+
+/* Cada slide del carrusel */
+.slide {
+    min-width: 100%; /* Cada imagen ocupa el ancho completo */
+    transition: transform 0.5s ease-in-out; /* Transición suave */
+    flex-shrink: 0; /* Evita que las imágenes se reduzcan */
+    text-align: center;
+}
+
+.slide img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover; /* Ajusta la imagen para que se vea bien */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra alrededor de las imágenes */
+}
+
+.slide p {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Animación automática */
+@keyframes deslizar {
+    0%, 20% { transform: translateX(0); }
+    25%, 45% { transform: translateX(-100%); }
+    50%, 70% { transform: translateX(-200%); }
+    75%, 100% { transform: translateX(0); }
+}
+
+.carrousel {
+    animation: deslizar 10s infinite; /* Anima las imágenes en bucle */
+}
+@media (max-width: 768px) {
+    .slide img {
+        max-height: 300px; /* Reduce el tamaño de las imágenes en móviles */
+    }
+}
+/* Sección del carrusel */
+#carrousel {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f4f4f9; /* Fondo claro */
+}
+
+#carrousel h2 {
+    font-size: 1.8rem;
+    color: #004080;
+    margin-bottom: 20px;
+}
+
+/* Contenedor del carrusel */
+.carrousel-container {
+    display: flex;
+    overflow: hidden; /* Oculta las imágenes fuera del área visible */
+    max-width: 100%; /* Se ajusta al ancho de la pantalla */
+    position: relative;
+    margin: 0 auto;
+}
+
+/* Cada slide del carrusel */
+.slide {
+    min-width: 100%; /* Cada slide ocupa todo el ancho */
+    flex-shrink: 0; /* Evita que se reduzca */
+    text-align: center;
+    transition: transform 0.5s ease-in-out; /* Transición suave al cambiar */
+}
+
+.slide img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover; /* Ajusta las imágenes para que se vean bien */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra alrededor de las imágenes */
+}
+
+.slide p {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Animación automática */
+@keyframes slide {
+    0%, 20% { transform: translateX(0); }
+    25%, 45% { transform: translateX(-100%); }
+    50%, 70% { transform: translateX(-200%); }
+    75%, 100% { transform: translateX(0); }
+}
+
+.carrousel-container {
+    animation: slide 10s infinite; /* Anima automáticamente */
+}
+#sabingo {
+    padding: 40px 20px;
+    background-color: #f9f9f9; /* Fondo claro */
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+#sabingo h2 {
+    font-size: 1.8rem;
+    color: #004080; /* Color azul para destacar */
+    margin-bottom: 20px;
+}
+
+#sabingo p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.boton-sabingo {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #004080; /* Fondo azul */
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.boton-sabingo:hover {
+    background-color: #003366; /* Azul más oscuro al pasar el mouse */
+}
+
+
 
